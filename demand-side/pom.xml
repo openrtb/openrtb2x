@@ -16,7 +16,7 @@
   
   <dependencies>
     <dependency>
-      <groupId>org.openrtb</groupId>
+      <groupId>org.openrtb.common</groupId>
       <artifactId>common</artifactId>
       <version>${project.version}</version>
     </dependency>

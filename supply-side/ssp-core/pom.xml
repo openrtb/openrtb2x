@@ -8,7 +8,7 @@
   <artifactId>ssp-core</artifactId>
 
   <parent>
-    <groupId>org.openrtb</groupId>
+    <groupId>org.openrtb.ssp</groupId>
     <artifactId>ssp</artifactId>
     <version>2.0.0</version>
   </parent>
@@ -17,7 +17,6 @@
   <dependency>
    <groupId>org.springframework</groupId>
    <artifactId>spring-core</artifactId>
-   <version>${spring-version}</version>
   </dependency>
   <dependency>
    <groupId>com.sun.jersey</groupId>
@@ -48,7 +47,7 @@
    <version>1.1.1</version>
   </dependency>
   <dependency>
-  	<groupId>org.openrtb</groupId>
+  	<groupId>org.openrtb.common</groupId>
   	<artifactId>common</artifactId>
   	<version>${project.version}</version>
   	<type>jar</type>
@@ -64,7 +63,6 @@
  </dependencies>
 
  <properties>
-  <spring-version>2.5.6.SEC02</spring-version>
   <jersey-version>1.4</jersey-version>
  </properties>
 

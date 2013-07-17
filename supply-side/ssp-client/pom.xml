@@ -7,7 +7,7 @@
   <artifactId>ssp-client</artifactId>
 
   <parent>
-    <groupId>org.openrtb</groupId>
+    <groupId>org.openrtb.ssp</groupId>
     <artifactId>ssp</artifactId>
     <version>2.0.0</version>
   </parent>
@@ -20,7 +20,7 @@
   		<scope>compile</scope>
   	</dependency>
   	<dependency>
-  		<groupId>org.openrtb</groupId>
+  		<groupId>org.openrtb.common</groupId>
   		<artifactId>common</artifactId>
   		<version>${project.version}</version>
   		<type>jar</type>
