@@ -230,9 +230,10 @@
     </pluginManagement>
   </build>
 
-  <license>
-    <name>New BSD License</name>
-    <url>http://www.opensource.org/licenses/bsd-license.php</url>
-  </license>
-</licenses>
+  <licenses>
+    <license>
+      <name>New BSD License</name>
+      <url>http://www.opensource.org/licenses/bsd-license.php</url>
+    </license>
+  </licenses>
 </project>
