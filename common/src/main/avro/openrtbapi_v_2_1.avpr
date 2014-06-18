@@ -30,7 +30,7 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-{"namespace": "org.openrtb.common.api",
+{"namespace": "org.openrtb.common.api.v_2_1",
  "protocol": "OpenRTBAPI",
  "version": "2.1",
  "types": [

@@ -1,0 +1,355 @@
+/*
+ * Copyright (c) 2010, The OpenRTB Project
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   1. Redistributions of source code must retain the above copyright notice,
+ *      this list of conditions and the following disclaimer.
+ *
+ *   2. Redistributions in binary form must reproduce the above copyright
+ *      notice, this list of conditions and the following disclaimer in the
+ *      documentation and/or other materials provided with the distribution.
+ *
+ *   3. Neither the name of the OpenRTB nor the names of its contributors
+ *      may be used to endorse or promote products derived from this
+ *      software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+ * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+ * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+ * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+ * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+ * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ */
+
+{"namespace": "org.openrtb.common.api.v_2_2",
+ "protocol": "OpenRTBAPI",
+ "version": "2.2",
+ "types": [
+     {"name": "Segment", "type": "record",
+      "fields": [
+        {"name": "id", "type": ["string", "null"]},
+        {"name": "name", "type": ["string", "null"]},
+        {"name": "value", "type": ["string", "null"]},
+        {"name": "ext", "type": ["string", "null"]}
+      ]
+     },
+
+     {"name": "Data", "type": "record",
+      "fields": [
+        {"name": "id", "type": ["string", "null"]},
+        {"name": "name", "type": ["string", "null"]},
+        {"name": "segment", "type":[{ "type": "array", "items": "Segment"},"null"]},
+        {"name": "ext", "type": ["string", "null"]}
+      ]
+     },
+
+     {"name": "Geo", "type": "record",
+      "fields": [
+        {"name": "lat", "type": ["float", "null"]},
+        {"name": "lon", "type": ["float", "null"]},
+        {"name": "country", "type": ["string", "null"]},
+        {"name": "region", "type": ["string", "null"]},
+        {"name": "regionfips104", "type": ["string", "null"]},
+        {"name": "metro", "type": ["string", "null"]},
+        {"name": "city", "type": ["string", "null"]},
+        {"name": "zip", "type": ["string", "null"]},
+        {"name": "type", "type": ["int", "null"]},
+        {"name": "ext", "type": ["string", "null"]}
+      ]
+     },
+
+     {"name": "User", "type": "record",
+      "fields": [
+        {"name": "id", "type": ["string", "null"]},
+        {"name": "buyeruid", "type": ["string", "null"]},
+        {"name": "yob", "type": ["int", "null"]},
+        {"name": "gender", "type": ["string", "null"]},
+        {"name": "keywords", "type": ["string", "null"]},
+        {"name": "customdata", "type": ["string", "null"]},
+        {"name": "geo", "type": ["Geo", "null"]},
+        {"name": "data", "type": [{ "type": "array", "items": "Data"},"null"] },
+        {"name": "ext", "type": ["string", "null"]}
+      ]
+     },
+
+     {"name": "Device", "type": "record",
+      "fields": [
+        {"name": "dnt", "type": ["int", "null"]},
+        {"name": "ua", "type": ["string", "null"]},
+        {"name": "ip", "type": ["string", "null"]},
+        {"name": "geo", "type": ["Geo", "null"]},
+        {"name": "didsha1", "type": ["string", "null"]},
+        {"name": "didmd5", "type": ["string", "null"]},
+        {"name": "dpidsha1", "type": ["string", "null"]},
+        {"name": "dpidmd5", "type": ["string", "null"]},
+        {"name": "macsha1", "type": ["string", "null"]},
+        {"name": "macmd5", "type": ["string", "null"]},
+        {"name": "ipv6", "type": ["string", "null"]},
+        {"name": "carrier", "type": ["string", "null"]},
+        {"name": "language", "type": ["string", "null"]},
+        {"name": "make", "type": ["string", "null"]},
+        {"name": "model", "type": ["string", "null"]},
+        {"name": "os", "type": ["string", "null"]},
+        {"name": "osv", "type": ["string", "null"]},
+        {"name": "js", "type": ["int", "null"]},
+        {"name": "connectiontype", "type": ["int", "null"]},
+        {"name": "deviceType", "type": ["int", "null"]},
+        {"name": "flashver", "type": ["string", "null"]},
+        {"name": "ifa", "type": ["string", "null"]},
+        {"name": "ext", "type": ["string", "null"]}
+      ]
+     },
+
+     {"name": "Producer", "type": "record",
+      "fields": [
+        {"name": "id", "type": ["string", "null"]},
+        {"name": "name", "type": ["string", "null"]},
+        {"name": "cat", "type": [{ "type": "array", "items": "string"},"null"] },
+        {"name": "domain", "type": ["string", "null"]},
+        {"name": "ext", "type": ["string", "null"]}
+      ]
+     },
+
+     {"name": "Publisher", "type": "record",
+      "fields": [
+        {"name": "id", "type": ["string", "null"]},
+        {"name": "name", "type": ["string", "null"]},
+        {"name": "cat", "type": [{ "type": "array", "items": "string"},"null"] },
+        {"name": "domain", "type": ["string", "null"]},
+        {"name": "ext", "type": ["string", "null"]}
+      ]
+     },
+
+     {"name": "Content", "type": "record",
+      "fields": [
+        {"name": "id", "type": ["string", "null"]},
+        {"name": "episode", "type": ["int", "null"]},
+        {"name": "title", "type": ["string", "null"]},
+        {"name": "series", "type": ["string", "null"]},
+        {"name": "season", "type": ["string", "null"]},
+        {"name": "url", "type": ["string", "null"]},
+        {"name": "cat", "type": [{ "type": "array", "items": "string"},"null"] },
+        {"name": "videoquality", "type": ["int", "null"]},
+        {"name": "keywords", "type": ["string", "null"]},
+        {"name": "contentrating", "type": ["string", "null"]},
+        {"name": "userrating", "type": ["string", "null"]},
+        {"name": "context", "type": ["string", "null"]},
+        {"name": "livestream", "type": ["int", "null"]},
+        {"name": "sourcerelationship", "type": ["int", "null"]},
+        {"name": "producer", "type": ["Producer", "null"]},
+        {"name": "len", "type": ["int", "null"]},
+        {"name": "qagmediarating", "type": ["int", "null"]},
+        {"name": "embeddable", "type": ["int", "null"]},
+        {"name": "language", "type": ["string", "null"]},
+        {"name": "ext", "type": ["string", "null"]}
+      ]
+     },
+
+     {"name": "App", "type": "record",
+      "fields": [
+        {"name": "id", "type": ["string", "null"]},
+        {"name": "name", "type": ["string", "null"]},
+        {"name": "domain", "type": ["string", "null"]},
+        {"name": "cat", "type": [{ "type": "array", "items": "string"},"null"] },
+        {"name": "sectioncat", "type": [{ "type": "array", "items": "string"},"null"] },
+        {"name": "pagecat", "type": [{ "type": "array", "items": "string"},"null"] },
+        {"name": "ver", "type": ["string", "null"]},
+        {"name": "bundle", "type": ["string", "null"]},
+        {"name": "privacypolicy", "type": ["int", "null"]},
+        {"name": "paid", "type": ["int", "null"]},
+        {"name": "publisher", "type": ["Publisher", "null"]},
+        {"name": "content", "type": ["Content", "null"]},
+        {"name": "keywords", "type": ["string", "null"]},
+        {"name": "storeurl", "type": ["string", "null"]},
+        {"name": "ext", "type": ["string", "null"]}
+      ]
+     },
+
+     {"name": "Site", "type": "record",
+      "fields": [
+        {"name": "id", "type": ["string", "null"]},
+        {"name": "name", "type": ["string", "null"]},
+        {"name": "domain", "type": ["string", "null"]},
+        {"name": "cat", "type": [{ "type": "array", "items": "string"},"null"] },
+        {"name": "sectioncat", "type": [{ "type": "array", "items": "string"},"null"] },
+        {"name": "pagecat", "type": [{ "type": "array", "items": "string"},"null"] },
+        {"name": "page", "type": ["string", "null"]},
+        {"name": "privacypolicy", "type": ["int", "null"]},
+        {"name": "ref", "type": ["string", "null"]},
+        {"name": "search", "type": ["int", "null"]},
+        {"name": "publisher", "type": ["Publisher", "null"]},
+        {"name": "content", "type": ["Content", "null"]},
+        {"name": "keywords", "type": ["string", "null"]},
+        {"name": "ext", "type": ["string", "null"]}
+      ]
+     },
+
+     {"name": "Banner", "type": "record",
+      "fields": [
+        {"name": "w", "type": ["int", "null"]},
+        {"name": "h", "type": ["int", "null"]},
+        {"name": "wmax", "type": ["int", "null"]},
+        {"name": "hmax", "type": ["int", "null"]},
+        {"name": "wmin", "type": ["int", "null"]},
+        {"name": "hmin", "type": ["int", "null"]},
+        {"name": "id", "type": ["string", "null"]},
+        {"name": "pos", "type": ["int", "null"]},
+        {"name": "btype", "type": [{ "type": "array", "items": "int"},"null"] },
+        {"name": "battr", "type": [{ "type": "array", "items": "int"},"null"] },
+        {"name": "mimes", "type": [{ "type": "array", "items": "string"},"null"] },
+        {"name": "topframe", "type": ["int", "null"], "default" : "0"},
+        {"name": "expdir", "type": [{ "type": "array", "items": "int"},"null"] },
+        {"name": "api", "type":[{ "type": "array", "items": "int"},"null"] },
+        {"name": "ext", "type": ["string", "null"]}
+      ]
+     },
+     
+     {"name": "Video", "type": "record",
+      "fields": [
+        {"name": "mimes", "type": { "type": "array", "items": "string"} },
+        {"name": "minduration", "type": "int"},
+        {"name": "maxduration", "type": "int"},
+        {"name": "protocol", "type": ["int", "null"]},
+        {"name": "protocols", "type": [{ "type": "array", "items": "int"},"null"]},
+        {"name": "w", "type": ["int", "null"]},
+        {"name": "h", "type": ["int", "null"]},
+        {"name": "startdelay", "type": ["int", "null"]},
+        {"name": "linearity", "type": ["int", "null"]},
+        {"name": "sequence", "type": ["int", "null"], "default": "1"},
+        {"name": "battr", "type": [{ "type": "array", "items": "int"},"null"]},
+        {"name": "maxextended", "type": ["int", "null"]},
+        {"name": "minbitrate", "type": ["int", "null"]},
+        {"name": "maxbitrate", "type": ["int", "null"]},
+        {"name": "boxingallowed", "type": ["int", "null"], "default": "1"},
+        {"name": "playbackmethod", "type": [{ "type": "array", "items": "int"},"null"] },
+        {"name": "delivery", "type": [{ "type": "array", "items": "int"},"null"] },
+        {"name": "pos", "type": ["int", "null"], "default": "0"},
+        {"name": "companionad", "type": [{ "type": "array", "items": "Banner"},"null"] },
+        {"name": "api", "type": [{ "type": "array", "items": "int"},"null"] },
+        {"name": "companiontype", "type": [{ "type": "array", "items": "int"},"null"] },
+        {"name": "ext", "type": ["string", "null"]}
+      ]
+     },
+
+     {"name": "Deal", "type": "record",
+       "fields": [
+        {"name": "id", "type": "string"},
+        {"name": "bidfloor", "type": ["float", "null"], "default" : "0.0"},
+        {"name": "bidfloorcur", "type": ["string", "null"], "defaut" : "USD"},
+        {"name": "wseat", "type": [{ "type": "array", "items": "string"},"null"] },
+        {"name": "wadomain", "type": [{ "type": "array", "items": "string"},"null"] },
+        {"name": "at", "type": ["int", "null"]},
+        {"name": "ext", "type": ["string", "null"]}
+       ]
+     },
+
+     {"name": "Pmp", "type": "record",
+       "fields": [
+         {"name": "private_auction", "type": ["int", "null"]},
+         {"name": "deals", "type": [{ "type": "array", "items": "Deal"},"null"] },
+         {"name": "ext", "type": ["string", "null"]}
+       ]
+     },
+
+     {"name": "Impression", "type": "record",
+      "fields": [
+        {"name": "id", "type": "string"},
+        {"name": "banner", "type": ["Banner", "null"]},
+        {"name": "video", "type": ["Video", "null"]},
+        {"name": "displaymanager", "type": ["string", "null"]},
+        {"name": "displaymanagerver", "type": ["string", "null"]},
+        {"name": "instl", "type": ["int", "null"], "default" : "0"},
+        {"name": "tagid", "type": ["string", "null"]},
+        {"name": "bidfloor", "type": ["float", "null"], "default" : "0.0"},
+        {"name": "bidfloorcur", "type": ["string", "null"], "defaut" : "USD"},
+        {"name": "secure", "type": ["int", "null"]},
+        {"name": "iframebuster", "type": [{ "type": "array", "items": "string"},"null"] },
+        {"name": "pmp", "type": ["Pmp", "null"]},
+        {"name": "ext", "type": ["string", "null"]}
+      ]
+     },
+
+     {"name": "Regs", "type": "record",
+       "fields": [
+         {"name": "coppa", "type": ["int", "null"]},
+         {"name": "ext", "type": ["string", "null"]}
+       ]
+     },
+
+     {"name": "BidRequest", "type": "record",
+      "fields": [
+        {"name": "id", "type": "string"},
+        {"name": "imp", "type": { "type": "array", "items": "Impression"} },
+        {"name": "site", "type": ["Site", "null"]},
+        {"name": "app", "type": ["App", "null"]},
+        {"name": "device", "type": ["Device", "null"]},
+        {"name": "user", "type": ["User", "null"]},
+        {"name": "at", "type": ["int", "null"], "default": "2"},
+        {"name": "tmax", "type": ["int", "null"]},
+        {"name": "wseat", "type": [{ "type": "array", "items": "string"},"null"] },
+        {"name": "allimps", "type": ["int", "null"], "default": "0"},
+        {"name": "cur", "type": [{ "type": "array", "items":   "string"},"null"]},
+	    {"name": "bcat", "type": [{ "type": "array", "items":"string"},"null"]},
+        {"name": "badv", "type": [{ "type": "array", "items":"string"},"null"]},
+        {"name": "regs", "type": ["Regs", "null"]},
+        {"name": "ext", "type": ["string", "null"]}
+      ]
+     },
+
+     {"name": "Bid", "type": "record",
+      "fields": [
+        {"name": "id", "type": "string"},
+        {"name": "impid", "type": "string"},
+        {"name": "price", "type": "float"},
+        {"name": "adid", "type": ["string", "null"]},
+        {"name": "nurl", "type": ["string", "null"]},
+        {"name": "adm", "type": ["string", "null"]},
+        {"name": "adomain", "type": [{ "type": "array", "items": "string"},"null"] },
+        {"name": "iurl", "type": ["string", "null"]},
+        {"name": "cid", "type": ["string", "null"]},
+        {"name": "crid", "type": ["string", "null"]},
+        {"name": "attr", "type": [{ "type": "array", "items": "int"},"null"] },
+        {"name": "dealid", "type": ["string", "null"]},
+        {"name": "h", "type": ["int", "null"]},
+        {"name": "w", "type": ["int", "null"]},
+        {"name": "ext", "type": ["string", "null"]}
+      ]
+     },
+
+     {"name": "SeatBid", "type": "record",
+      "fields": [
+        {"name": "bid", "type": { "type": "array", "items": "Bid"} },
+        {"name": "seat", "type": ["string", "null"]},
+        {"name": "group", "type": ["string", "null"]},
+        {"name": "ext", "type": ["string", "null"]}
+      ]
+     },
+
+     {"name": "BidResponse", "type": "record",
+      "fields": [
+        {"name": "id", "type": "string"},
+        {"name": "seatbid", "type": { "type": "array", "items": "SeatBid"} },
+        {"name": "bidid", "type": ["string", "null"]},
+        {"name": "cur", "type": ["string", "null"], "default": "USD"},
+        {"name": "customdata", "type": ["string", "null"]},
+        {"name": "nbr", "type": ["int", "null"]},
+        {"name": "ext", "type": ["string", "null"]}
+      ]
+     }        
+ ],
+ "messages": {
+     "process": {
+         "request": [{"name": "request", "type": "BidRequest"}],
+         "response": "BidResponse"
+     }
+ }
+}
