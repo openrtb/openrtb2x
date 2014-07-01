@@ -120,7 +120,7 @@
 			"minimum": 1,
 			"maximum": 16
 		},
-        "nobid_reason_code": {
+        "nobid_reason": {
             "type": "integer",
             "minimum": 0,
             "maximum": 8
