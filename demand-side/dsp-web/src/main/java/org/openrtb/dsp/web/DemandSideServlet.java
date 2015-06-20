@@ -23,15 +23,15 @@ public class DemandSideServlet extends HttpServlet {
 	public void init() throws javax.servlet.ServletException {
 		try {
 			OpenRTBAPI bidder = null;
-			String classname = getServletContext().getInitParameter("DAOClassName");
-			String daoDBlocation = getServletContext().getInitParameter("DBLocation");
+			String classname = getServletConfig().getInitParameter("DAOClassName");
+			String daoDBlocation = getServletConfig().getInitParameter("DBLocation");
 			daoObject = (DemandSideDAO)  Class.forName(classname).newInstance();
 			daoObject.loadData(daoDBlocation);	
 
-			classname = getServletContext().getInitParameter("BidderClassName");
+			classname = getServletConfig().getInitParameter("BidderClassName");
 			bidder = (OpenRTBAPI) Class.forName(classname).newInstance();
 			/*	
-			classname = getServletContext().getInitParameter("BatchImplClassName");
+			classname = getServletConfig().getInitParameter("BatchImplClassName");
 			if ((classname != null) || (classname != "")) {
 				blockListRequestor = (BlocklistAPI)  Class.forName(classname).newInstance();
 			} */
