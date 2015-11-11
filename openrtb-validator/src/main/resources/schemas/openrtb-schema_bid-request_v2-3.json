@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"title": "openrtb-v2_2-schema-bid_request",
-	"description": "json schema for an openrtb v2.2 bid request",
+	"title": "openrtb-v2_3-schema-bid_request",
+	"description": "json schema for an openrtb v2.3 bid request",
 	"type": "object",
 	"required": [ "id", "imp" ],
 	"not": {
