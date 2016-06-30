@@ -38,9 +38,10 @@ import java.io.Reader;
 
 import com.fasterxml.jackson.databind.JsonNode;
 
-/**
- * This interface provides JSON validation methods.
- */
+/***************************************************
+ * This interface provides JSON validation methods.*
+ **************************************************/
+
 public interface OpenRtbValidator {
 
     /**

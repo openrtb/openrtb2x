@@ -32,9 +32,10 @@
 
 package org.openrtb.validator;
 
-/**
- * This enumeration represents validation input types.
- */
+/******************************************************
+ * This enumeration represents validation input types.*
+ *****************************************************/
+
 public enum OpenRtbInputType {
 	BID_REQUEST, BID_RESPONSE
 }
