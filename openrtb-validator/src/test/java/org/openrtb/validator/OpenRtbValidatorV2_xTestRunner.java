@@ -12,7 +12,7 @@ import cucumber.api.junit.Cucumber;
 				"pretty",
 				"html:target",
 		},
-		glue = {"org.openrtb.validator.steps/"}
+		glue = {"org.openrtb.validator.steps"}
 		)
 
 public class OpenRtbValidatorV2_xTestRunner {
