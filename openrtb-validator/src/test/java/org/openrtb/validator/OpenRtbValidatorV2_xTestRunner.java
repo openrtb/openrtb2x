@@ -8,11 +8,11 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		features = {"src/test/resources/features/"},
-		tags = {"~@unstable"},
 		plugin = {
 				"pretty",
 				"html:target",
-		}
+		},
+		glue = {"org.openrtb.validator.steps/"}
 		)
 
 public class OpenRtbValidatorV2_xTestRunner {
