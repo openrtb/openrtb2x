@@ -1,5 +1,4 @@
-package steps;
-
+package org.openrtb.validator.steps;
 import static org.junit.Assert.assertTrue;
 
 import org.openrtb.validator.OpenRtbInputType;
@@ -29,7 +28,7 @@ public class OpenRtb2_4BidRequestResponseSteps {
 		resource = bidRequest;
 	}
 
-	@When("^an openRtb validator version ([^\"]*) runs validation on given bid request$")
+	@When("^an openRtb validator version \"([^\"]*)\" runs validation on given bid request$")
 	public void isValidBidRequest(String version) throws Throwable {
 		getVersion(version);
 		System.out.println("version"+version);
@@ -44,7 +43,7 @@ public class OpenRtb2_4BidRequestResponseSteps {
 		resource = bidResponse;
 	}
 
-	@When("^an openRtb validator version ([^\"]*) runs validation on given bid response$")
+	@When("^an openRtb validator version \"([^\"]*)\" runs validation on given bid response$")
 	public void isValidBidResponse(String version) throws Throwable {
 		getVersion(version);
 		validator = OpenRtbValidatorFactory.getValidator(OpenRtbInputType.BID_RESPONSE, openRtbVersion);
