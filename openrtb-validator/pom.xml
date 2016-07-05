@@ -3,18 +3,34 @@
 
     <groupId>org.openrtb</groupId>
     <artifactId>openrtb-validator</artifactId>
-    <version>2.3.1</version>
+    <version>2.3.2</version>
     <packaging>jar</packaging>
 	
     <name>openrtb-validator</name>
     <url>http://maven.apache.org</url>
-    <description>Provides a simple API that can be used to validate JSON bid requests and responses according to OpenRTB specifications. OpenRTB versions 1.0, 2.0, 2.1, 2.2, and 2.3 are fully supported.</description>
+    <description>Provides a simple API that can be used to validate JSON bid requests and responses according to OpenRTB specifications. OpenRTB versions 1.0, 2.0, 2.1, 2.2, 2.3 and 2.4 are fully supported.</description>
 	
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <component.name>openrtb-validator</component.name>
-    </properties>
-	
+       <java.version>1.8</java.version>
+       <maven-compiler-plugin.version>3.3</maven-compiler-plugin.version>
+       <cucumber.version>1.2.4</cucumber.version>
+       <spring.version>4.1.7.RELEASE</spring.version>
+       <jackson.version>2.6.2</jackson.version>
+       <resty.version>0.3.2</resty.version>
+       <junit.version>4.12</junit.version>
+       <json.simple.version>1.1.1</json.simple.version>
+       <commons.codec.version>1.10</commons.codec.version>
+       <mysqlConnector.version>5.1.38</mysqlConnector.version>
+       <commons.dbcp.version>1.4</commons.dbcp.version>
+       <commons.io.version>2.4</commons.io.version>
+       <slf4j.version>1.7.13</slf4j.version>
+       <log4j.version>1.2.17</log4j.version>
+       <surefire.version>2.19.1</surefire.version>
+       <vertica.version>7.1.2-0</vertica.version>
+       <opencsv.version>2.3</opencsv.version>
+   </properties>
     <licenses>
         <license>
             <name>New BSD License</name>
@@ -55,6 +71,18 @@
             <groupId>com.github.fge</groupId>
             <artifactId>json-schema-validator</artifactId>
             <version>2.2.6</version>
+        </dependency>
+        <dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 

@@ -1,0 +1,16 @@
+{
+	"id": "123",
+	"seatbid": [
+	{
+		"bid": [
+		      {
+		    	  "id": "12345", 
+		    	  "impid": "2", 
+		    	  "price": 3.00,
+		    	  "nurl": "http://example.com/winnoticeurl",
+		    	  "adm": "{\"native\":{\"ver\":\"1.0\",\"link\":{ ... },\"imptrackers\":[ ... ],\"assets\":[ ... ]}}"
+		      }
+		     ]	
+	}
+   ]
+}

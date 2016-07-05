@@ -32,9 +32,10 @@
 
 package org.openrtb.validator;
 
-/**
- * This class provides validation result data.
- */
+/***********************************************
+ * This class provides validation result data. *
+ **********************************************/
+
 public class ValidationResult {
 
     private final boolean valid;
