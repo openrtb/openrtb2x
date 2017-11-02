@@ -14,11 +14,8 @@ import java.util.Map;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.openrtb.common.api.App;
-import org.openrtb.common.api.Banner;
-import org.openrtb.common.api.BidRequest;
-import org.openrtb.common.api.Impression;
-import org.openrtb.common.api.Video;
+import org.openrtb.common.api.*;
+
 /**
  * This class is used to test the functionality of RTBRequestWrapper class
  */
@@ -53,7 +50,7 @@ public class RTBRequestWrapperTest {
 		Banner banner = new Banner();
 		banner.setH(25);
 		banner.setW(30);
-		Impression imp = new Impression();
+		Imp imp = new Imp();
 		imp.setId("10212sdsa1");
 		imp.setBanner(banner);
 		imp.setBidfloor((float) 10.085);
@@ -72,7 +69,7 @@ public class RTBRequestWrapperTest {
 		when(bidRequest.getId()).thenReturn(
 				"ad1d762d6d9719b6b3c9e09f6433a76d9b593738");
 		when(bidRequest.getImp()).thenReturn(
-				Collections.<Impression> singletonList(imp));
+				Collections.<Imp> singletonList(imp));
 		when(bidRequest.getApp()).thenReturn(app);
 		when(bidRequest.getWseat()).thenReturn(
 				Collections.<CharSequence> singletonList("012asfdfd25"));

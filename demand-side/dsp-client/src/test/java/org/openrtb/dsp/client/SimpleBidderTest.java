@@ -20,7 +20,7 @@ import org.openrtb.common.api.App;
 import org.openrtb.common.api.Banner;
 import org.openrtb.common.api.BidRequest;
 import org.openrtb.common.api.BidResponse;
-import org.openrtb.common.api.Impression;
+import org.openrtb.common.api.Imp;
 import org.openrtb.common.api.Site;
 import org.openrtb.common.api.Video;
 import org.openrtb.dsp.intf.model.DSPException;
@@ -46,7 +46,7 @@ public class SimpleBidderTest {
 		Banner banner = new Banner();
 		banner.setH(25);
 		banner.setW(30);
-		Impression imp = new Impression();
+		Imp imp = new Imp();
 		imp.setId("10212sdsa1");
 		imp.setBanner(banner);
 		imp.setBidfloor((float) 10.085);
@@ -65,7 +65,7 @@ public class SimpleBidderTest {
 		when(request.getId()).thenReturn(
 				"ad1d762d6d9719b6b3c9e09f6433a76d9b593738");
 		when(request.getImp()).thenReturn(
-				Collections.<Impression> singletonList(imp));
+				Collections.<Imp> singletonList(imp));
 		when(request.getApp()).thenReturn(app);
 		when(request.getWseat()).thenReturn(
 				Collections.<CharSequence> singletonList("012asfdfd25"));
@@ -78,7 +78,7 @@ public class SimpleBidderTest {
 		Banner banner = new Banner();
 		banner.setH(25);
 		banner.setW(30);
-		Impression imp = new Impression();
+		Imp imp = new Imp();
 		imp.setId("10212sdsa1");
 		imp.setBanner(banner);
 		imp.setBidfloor((float) 10.085);
@@ -97,7 +97,7 @@ public class SimpleBidderTest {
 		when(requestSite.getId()).thenReturn(
 				"ad1d762d6d9719b6b3c9e09f6433a76d9b593738");
 		when(requestSite.getImp()).thenReturn(
-				Collections.<Impression> singletonList(imp));
+				Collections.<Imp> singletonList(imp));
 		when(requestSite.getWseat()).thenReturn(
 				Collections.<CharSequence> singletonList("012asfdfd25"));
 		when(requestSite.getSite()).thenReturn(site);
@@ -129,10 +129,10 @@ public class SimpleBidderTest {
 	 */
 	@Test
 	public void bannerAdTest() {
-		List<Impression> impList = request.getImp();
-		Iterator<Impression> itr = impList.iterator();
+		List<Imp> impList = request.getImp();
+		Iterator<Imp> itr = impList.iterator();
 		while (itr.hasNext()) {
-			Impression imp = itr.next();
+			Imp imp = itr.next();
 			Banner b = imp.getBanner();
 			assertTrue("Height of the impression must be provided in Banner Object",
 					b.getH() == 25);
@@ -160,10 +160,10 @@ public class SimpleBidderTest {
 	 */
 	@Test
 	public void videoAdTest() {
-		List<Impression> impList = request.getImp();
-		Iterator<Impression> itr = impList.iterator();
+		List<Imp> impList = request.getImp();
+		Iterator<Imp> itr = impList.iterator();
 		while (itr.hasNext()) {
-			Impression imp = itr.next();
+			Imp imp = itr.next();
 			Video video = imp.getVideo();
 			assertNotNull("mimes types must be provided in Video Object",
 					video.getMimes());

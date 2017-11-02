@@ -16,7 +16,7 @@ import org.junit.Test;
 import org.openrtb.common.api.Banner;
 import org.openrtb.common.api.BidRequest;
 import org.openrtb.common.api.BidResponse;
-import org.openrtb.common.api.Impression;
+import org.openrtb.common.api.Imp;
 import org.openrtb.common.api.Site;
 import org.openrtb.common.api.Video;
 import org.openrtb.dsp.intf.model.RTBAdvertiser;
@@ -38,7 +38,7 @@ public class FiniteStateMachineTest {
 		Banner banner = new Banner();
 		banner.setH(25);
 		banner.setW(30);
-		Impression imp = new Impression();
+		Imp imp = new Imp();
 		imp.setId("10212sdsa1");
 		imp.setBanner(banner);
 		imp.setBidfloor(new Float(10.085));
@@ -55,7 +55,7 @@ public class FiniteStateMachineTest {
 		site.setId("124545sfdghs");
 
 		when(requestError.getImp()).thenReturn(
-				Collections.<Impression> singletonList(imp));
+				Collections.<Imp> singletonList(imp));
 		when(requestError.getSite()).thenReturn(site);
 		when(requestError.getWseat()).thenReturn(
 				Collections.<CharSequence> singletonList("012asfdfd25"));
@@ -67,7 +67,7 @@ public class FiniteStateMachineTest {
 		Banner banner = new Banner();
 		banner.setH(25);
 		banner.setW(30);
-		Impression imp = new Impression();
+		Imp imp = new Imp();
 		imp.setId("10212sdsa1");
 		imp.setBanner(banner);
 		imp.setBidfloor(new Float(10.085));
@@ -94,7 +94,7 @@ public class FiniteStateMachineTest {
 		Banner banner = new Banner();
 		banner.setH(25);
 		banner.setW(30);
-		Impression imp = new Impression();
+		Imp imp = new Imp();
 		imp.setId("10212sdsa1");
 		imp.setBanner(banner);
 		imp.setBidfloor(new Float(10.085));
@@ -107,7 +107,7 @@ public class FiniteStateMachineTest {
 		video.setMaxduration(500);
 		video.setProtocol(200);
 		imp.setVideo(video);
-		List<Impression> impList = new ArrayList<Impression>();
+		List<Imp> impList = new ArrayList<Imp>();
 		for (int i = 0; i < 1000000; i++) {
 			imp.setId("10212sdsa1" + i);
 			impList.add(imp);
@@ -127,7 +127,7 @@ public class FiniteStateMachineTest {
 		Banner banner = new Banner();
 		banner.setH(25);
 		banner.setW(30);
-		Impression imp = new Impression();
+		Imp imp = new Imp();
 		imp.setId("10212sdsa1");
 		imp.setBanner(banner);
 		imp.setBidfloor(new Float(10.085));
@@ -140,7 +140,7 @@ public class FiniteStateMachineTest {
 		video.setMaxduration(500);
 		video.setProtocol(200);
 		imp.setVideo(video);
-		List<Impression> impList = new ArrayList<Impression>();
+		List<Imp> impList = new ArrayList<Imp>();
 		for (int i = 0; i < 10; i++) {
 			imp.setId("10212sdsa1" + i);
 			impList.add(imp);

@@ -65,7 +65,7 @@ public class SimpleBidder implements OpenRTBAPI
             response.id = wReq.getId();          
             response.bidid = "simple-bid-tracker";
             Map<String, String> seats = wReq.getUnblockedSeats(wReq.getSSPName());
-            for (Impression i : wReq.getRequest().getImp())
+            for (Imp i : wReq.getRequest().getImp())
             {    
                 for (Map.Entry<String, String> s : seats.entrySet())
                 {  
@@ -104,10 +104,10 @@ public class SimpleBidder implements OpenRTBAPI
 					logger.error("BidRequest must have one or more impressions");
 					return false;
 			} else {
-					List<Impression> impressionList = request.getImp();
-					Iterator<Impression> itr = impressionList.iterator();
+					List<Imp> impressionList = request.getImp();
+					Iterator<Imp> itr = impressionList.iterator();
 					while (itr.hasNext()) {
-						Impression imp = itr.next();
+						Imp imp = itr.next();
 						if (imp.getId() == null) {
 							logger.error("Impression must have valid Id");
 							return false;

@@ -45,7 +45,7 @@ import org.apache.avro.AvroRemoteException;
 import org.openrtb.common.api.Bid;
 import org.openrtb.common.api.BidRequest;
 import org.openrtb.common.api.BidResponse;
-import org.openrtb.common.api.Impression;
+import org.openrtb.common.api.Imp;
 import org.openrtb.common.api.OpenRTBAPI;
 import org.openrtb.common.api.SeatBid;
 import org.openrtb.common.util.StringUtils;
@@ -94,12 +94,12 @@ public class StatefulBidder implements OpenRTBAPI {
 					logger.error("BidRequest must have one or more impressions");
 					return false;
 			} else {
-					List<Impression> impressionList = request.getImp();
-					Iterator<Impression> itr = impressionList.iterator();
+					List<Imp> impressionList = request.getImp();
+					Iterator<Imp> itr = impressionList.iterator();
 					while (itr.hasNext()) {
-						Impression imp = itr.next();
+						Imp imp = itr.next();
 						if (imp.getId() == null) {
-							logger.error("Impression must have valid Id");
+							logger.error("Imp must have valid Id");
 							return false;
 						} else if (imp.getBanner() == null && imp.getVideo() == null) {
 							logger.error("Impression must have  atleast Banner or Video Object");
@@ -135,7 +135,7 @@ public class StatefulBidder implements OpenRTBAPI {
 
 			Map<String, String> seats = wReq.getUnblockedSeats(wReq
 					.getSSPName());
-			for (Impression i : wReq.getRequest().getImp()) {
+			for (Imp i : wReq.getRequest().getImp()) {
 				for (Map.Entry<String, String> s : seats.entrySet()) {
 					RTBAdvertiser a = wReq.getAdvertiser(s.getValue());
 

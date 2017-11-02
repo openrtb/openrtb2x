@@ -26,7 +26,7 @@ import org.openrtb.common.api.BidRequest;
 import org.openrtb.common.api.Data;
 import org.openrtb.common.api.Device;
 import org.openrtb.common.api.Geo;
-import org.openrtb.common.api.Impression;
+import org.openrtb.common.api.Imp;
 import org.openrtb.common.api.Site;
 import org.openrtb.common.api.User;
 import org.openrtb.common.api.Video;
@@ -87,7 +87,7 @@ public class DemandSideServerTest {
 		video.setMaxextended(44);
 		video.setMinbitrate(55);
 		video.setMaxbitrate(55);
-		Impression imp = new Impression();
+		Imp imp = new Imp();
 		imp.setId("10212sdsa1");
 		imp.setBanner(banner);
 		imp.setVideo(video);
@@ -99,7 +99,7 @@ public class DemandSideServerTest {
 		imp.setDisplaymanagerver("ss223");
 		imp.setTagid("56666");
 		imp.setBidfloorcur("dfsd");
-		List<Impression> impression = new ArrayList<Impression>();
+		List<Imp> impression = new ArrayList<Imp>();
 		impression.add(imp);
 		List<CharSequence> wseat = new ArrayList<CharSequence>();
 		wseat.add("SeatID001");
@@ -176,14 +176,14 @@ public class DemandSideServerTest {
 		User user = new User();
 		user.setBuyeruid("a44");
 		user.setId("56sdf");
-		Impression imp = new Impression();
+		Imp imp = new Imp();
 		imp.setId("10212sdsa1");
 		imp.setBanner(banner);
 		imp.setVideo(video);
 		imp.setDisplaymanager("sdf555");
 		imp.setDisplaymanagerver("ss223");
 		imp.setBidfloor(new Float(15.4));
-		List<Impression> impression = new ArrayList<Impression>();
+		List<Imp> impression = new ArrayList<Imp>();
 		impression.add(imp);
 
 		bidRequest.setId("102335assd55d");
