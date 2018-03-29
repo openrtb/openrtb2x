@@ -63,7 +63,7 @@ public class OpenRTBAPIDummyTest implements OpenRTBAPI {
 			response.bidid = "simple-bid-tracker";
 			Map<String, String> seats = wReq.getUnblockedSeats(wReq
 					.getSSPName());
-			for (Impression i : wReq.getRequest().getImp()) {
+			for (Imp i : wReq.getRequest().getImp()) {
 				for (Map.Entry<String, String> s : seats.entrySet()) {
 
 					RTBAdvertiser a = wReq.getAdvertiser(s.getValue());

@@ -32,10 +32,10 @@
 
 package org.openrtb.dsp.intf.model;
 
+import org.openrtb.common.api.BidRequest;
+
 import java.util.HashMap;
 import java.util.Map;
-
-import org.openrtb.common.api.BidRequest;
 
 public class RTBRequestWrapper extends BidRequest {
 
@@ -52,12 +52,12 @@ public class RTBRequestWrapper extends BidRequest {
 
 	public RTBRequestWrapper(BidRequest request) {
 
-		super(request.getId(), request.getImp(), request.getSite(), request
-				.getApp(), request.getDevice(), request.getUser(), request
-				.getAt(), request.getTmax(), request.getWseat(), request
-				.getAllimps(), request.getCur(), request.getBcat(), request
-				.getBadv(), request.getExt());
-		this.request = request;
+        super(request.getId(), request.getImp(), request.getSite(), request
+                .getApp(), request.getDevice(), request.getUser(), request.getTest(), request
+                .getAt(), request.getTmax(), request.getWseat(), request.getBseat(), request
+                .getAllimps(), request.getCur(), request.getWlang(), request.getBcat(), request
+                .getBadv(), request.getBapp(), request.getSource(), request.getRegs(), request.getExt());
+        this.request = request;
 	}
 
 	public void setContext(RTBExchange exchange, Map<String, RTBAdvertiser> advertisers,
