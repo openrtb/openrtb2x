@@ -17,13 +17,13 @@ You should be able to build the project by running 'mvn clean
 install' from the top-level directory.  The project is structured
 in the following manner:
 
-## [common](https://github.com/jm3/openrtb2x/tree/2.0/common)
+## [common](https://github.com/openrtb/openrtb2x/tree/2.0/common)
 This directory is a maven project that produces a single jar file.
 This jar file contains all code that is shared between the demand-side
 and supply-side implementations (i.e. authentication/validation
 work, object models, etc.)
 
-## [demand-side](https://github.com/jm3/openrtb2x/tree/2.0/demand-side)
+## [demand-side](https://github.com/openrtb/openrtb2x/tree/2.0/demand-side)
 This directory contains a series of maven projects responsible for
 the DSP behavior of this specification.  The sub-project artifact
 responsibilities include:
@@ -64,12 +64,12 @@ the following:
 As a result of requirement (1) above, this package must be capable of 
 working in concert with the 'ssp-client' described below.
 
-## [supply-side](https://github.com/jm3/openrtb2x/tree/2.0/supply-side)
+## [supply-side](https://github.com/openrtb/openrtb2x/tree/2.0/supply-side)
 Similar to the `demand-side` module, this directory contains a series of 
 maven projects responsible for the SSP behavior described in the 
 specification.  The sub-module artifact responsibilities include:
 
-### [ssp-web](https://github.com/jm3/openrtb2x/tree/2.0/supply-side/ssp-web)
+### [ssp-web](https://github.com/openrtb/openrtb2x/tree/2.0/supply-side/ssp-web)
 This project packages up a web archive (war) file capable of being
 deployed in any standard JEE web container.  It is based upon the
 reference 'ssp-client' artifact provided with this implementation.
@@ -77,7 +77,7 @@ reference 'ssp-client' artifact provided with this implementation.
 The contents of this package are purposefully minimized to the
 deployment configurations necessary to deploy the war file.
 
-### [ssp-core](https://github.com/jm3/openrtb2x/tree/2.0/supply-side/ssp-core)
+### [ssp-core](https://github.com/openrtb/openrtb2x/tree/2.0/supply-side/ssp-core)
 This project produces a jar file containing the necessary logic for
 sending and receiving both requests and responses, including all
 message handling that is pertinent to the SSP.
@@ -89,12 +89,12 @@ All SSP specific logic (i.e. persisting the advertiser data,
 retrieving publisher information, etc.) is delegated to the
 'ssp-client' via the 'ssp-intf'.
 
-### [ssp-intf](https://github.com/jm3/openrtb2x/tree/2.0/supply-side/ssp-intf)
+### [ssp-intf](https://github.com/openrtb/openrtb2x/tree/2.0/supply-side/ssp-intf)
 This package is the contract and set of interfaces between the
 message handling code located in the 'ssp-core' and an SSP's specific
 internal representation of that data.
 
-### [ssp-client](https://github.com/jm3/openrtb2x/tree/2.0/supply-side/ssp-client)
+### [ssp-client](https://github.com/openrtb/openrtb2x/tree/2.0/supply-side/ssp-client)
 This package is an example implementation of the 'ssp-intf' to satisfy 
 the following:
 1. Integration testing between the 'ssp-web' and 'dsp-web' projects.
