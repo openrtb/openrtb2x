@@ -171,6 +171,11 @@
         },
 
 
+        "boolean_int": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 1
+        },
         "positive_int": {
             "type": "integer",
             "minimum": 0
