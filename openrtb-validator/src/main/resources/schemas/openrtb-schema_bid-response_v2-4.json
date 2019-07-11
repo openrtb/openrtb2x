@@ -3,7 +3,7 @@
 	"title": "openrtb-v2_4-schema-bid_response",
 	"description": "json schema for an openrtb v2.4 bid response (http://www.iab.net/media/file/OpenRTB-API-Specification-Version-2-4.pdf)",
 	"type": "object",
-	"required": [ "id", "seatbid" ],
+	"required": [ "id" ],
 	"additionalProperties": false,
 	"properties": {
 		"id": {

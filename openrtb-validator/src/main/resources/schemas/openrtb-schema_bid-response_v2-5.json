@@ -4,8 +4,7 @@
 	"description": "json schema for an openrtb v2.5 bid response (http://www.iab.net/media/file/OpenRTB-API-Specification-Version-2-5.pdf)",
 	"type": "object",
 	"required": [
-		"id",
-		"seatbid"
+		"id"
 	],
 	"additionalProperties": false,
 	"properties": {
