@@ -28,7 +28,7 @@
 			"type": "string"
 		},
 		"nbr": {
-			"$ref": "#/definitions/nobid_reason"
+			"$ref": "#/definitions/nobid_reason_code"
 		},
 		"ext": {
 			"type": "object"
